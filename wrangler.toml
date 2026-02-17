@@ -1,0 +1,5 @@
+name = "semantiv-ai"
+compatibility_date = "2026-02-17"
+
+[site]
+bucket = "./dist"
