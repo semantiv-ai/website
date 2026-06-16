@@ -67,7 +67,63 @@ runtime prototypes</pre>
 
   <section class="section section--dark">
     <div class="shell section-grid">
-      <div class="section-label">03 Market entry</div>
+      <div class="section-label">03 Founder</div>
+      <div class="section-body split">
+        <div>
+          <p class="eyebrow">Founder Approach</p>
+          <h2 class="headline-lg">Built by an engineer who has shipped complex systems where reliability, clarity, and trust matter.</h2>
+          <p class="lede">
+            Semantiv was founded by Ariel Azoulay, an engineering leader focused
+            on making complex AI systems observable, composable, and reliable
+            enough for production use.
+          </p>
+          <p class="body-copy founder-copy">
+            Ariel has led enterprise analytics modernization at Moody's Analytics,
+            delivered production platforms for Spotify and McKinsey through
+            ThoughtWorks, built real-time media and data-visualization systems at
+            Nokia and Platora, and worked on recommendation systems and applied
+            NLP at Outbrain and Carnegie Mellon.
+          </p>
+          <p class="body-copy founder-copy">
+            That background shapes Semantiv's current focus: understand what
+            autonomous systems actually do, define what their actions mean
+            operationally, bind important work to evidence, and design controls
+            that help teams scale agentic systems with confidence.
+          </p>
+        </div>
+        <div class="artifact-panel">
+          <div class="artifact-header">
+            <span>Founder signal</span>
+            <span class="status">Operator-led</span>
+          </div>
+          <div class="artifact-body">
+            <ul class="founder-signals">
+              <li>
+                <span>enterprise</span>
+                <strong>Analytics platforms, reporting systems, regulatory-facing workflows.</strong>
+              </li>
+              <li>
+                <span>delivery</span>
+                <strong>Spotify and McKinsey production work through ThoughtWorks.</strong>
+              </li>
+              <li>
+                <span>systems</span>
+                <strong>Real-time media, data visualization, recommendations, applied NLP.</strong>
+              </li>
+              <li>
+                <span>current</span>
+                <strong>Agent behavior, evidence, control points, and decision records.</strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="shell section-grid">
+      <div class="section-label">04 Market entry</div>
       <div class="section-body">
         <h2 class="headline-lg">Custom technical reviews first. Product primitives behind the scenes.</h2>
         <p class="lede">
@@ -99,3 +155,45 @@ runtime prototypes</pre>
     secondaryLabel="View platform direction"
   />
 </Layout>
+
+<style>
+  .founder-copy {
+    margin-top: 1rem;
+  }
+
+  .founder-signals {
+    display: grid;
+    gap: 0;
+  }
+
+  .founder-signals li {
+    display: grid;
+    gap: 0.35rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-dark);
+    list-style: none;
+  }
+
+  .founder-signals li:first-child {
+    padding-top: 0;
+  }
+
+  .founder-signals li:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .founder-signals span {
+    color: var(--accent-evidence);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+  }
+
+  .founder-signals strong {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+</style>
