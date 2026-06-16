@@ -33,7 +33,7 @@ import { cases, methodSteps, reviewOutputs } from "../data/site";
       <div class="section-label">01 Problem</div>
       <div class="section-body split">
         <div>
-          <h2 class="headline-lg">Understand what your AI agents actually do before they scale.</h2>
+          <h2 class="headline-lg problem-heading">Understand what your AI agents actually do before they scale.</h2>
           <p class="lede">
             Agents are moving from demos into production work. They call tools,
             touch data, modify code, draft contracts, trigger decisions, and coordinate
@@ -165,25 +165,29 @@ import { cases, methodSteps, reviewOutputs } from "../data/site";
 
 <style>
   .home-hero {
-    padding: 3rem 0 2rem;
+    padding: 4.25rem 0 4rem;
     border-top: 0;
   }
 
   .hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(22rem, 0.95fr);
-    gap: 3rem;
-    align-items: end;
+    grid-template-columns: minmax(0, 0.95fr) minmax(22rem, 0.9fr);
+    gap: 5rem;
+    align-items: center;
   }
 
   .hero-copy {
-    max-width: 52rem;
+    max-width: 48rem;
   }
 
   .artifact-quote {
     color: var(--text-dark);
-    font-size: 1.35rem;
-    line-height: 1.45;
+    font-size: 1.18rem;
+    line-height: 1.6;
+  }
+
+  .problem-heading {
+    max-width: 15ch;
   }
 
   .review-list {
@@ -212,6 +216,10 @@ import { cases, methodSteps, reviewOutputs } from "../data/site";
 
     .artifact-quote {
       font-size: 1.1rem;
+    }
+
+    .problem-heading {
+      max-width: none;
     }
   }
 </style>
