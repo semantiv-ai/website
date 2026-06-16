@@ -1,0 +1,16 @@
+---
+import { platformPrimitives } from "../data/site";
+---
+
+<div class="grid-list">
+  {
+    platformPrimitives.map((primitive) => (
+      <article class="grid-item">
+        <span class="grid-item__label">{primitive.label}</span>
+        <h3>{primitive.name}</h3>
+        <p>{primitive.description}</p>
+        <code>{primitive.example}</code>
+      </article>
+    ))
+  }
+</div>

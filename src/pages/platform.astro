@@ -1,0 +1,95 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CTA from "../components/CTA.astro";
+import PrimitiveGrid from "../components/PrimitiveGrid.astro";
+import RuntimeDiagram from "../components/RuntimeDiagram.astro";
+---
+
+<Layout title="Platform Direction">
+  <section class="page-hero">
+    <div class="shell page-hero__body">
+      <div class="page-hero__text">
+        <p class="eyebrow">Platform direction</p>
+        <h1 class="headline-xl">Emerging runtime infrastructure for agent behavior and control.</h1>
+        <p class="lede">
+          Semantiv is developing the primitives that repeatedly appear when teams
+          try to understand, evidence, coordinate, and control autonomous AI systems.
+        </p>
+      </div>
+      <div class="page-hero__meta">
+        <p>Current motion: technical review and implementation support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="shell section-grid">
+      <div class="section-label">01 Primitives</div>
+      <div class="section-body">
+        <h2 class="headline-lg">The shape repeats across customers.</h2>
+        <p class="lede">
+          Each environment is different. The operational sequence is not:
+          behavior, meaning, evidence, authority, coordination, control, record.
+        </p>
+        <PrimitiveGrid />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="shell section-grid">
+      <div class="section-label">02 Surfaces</div>
+      <div class="section-body split">
+        <div>
+          <h2 class="headline-lg">Product surfaces emerging from review work.</h2>
+          <p class="lede">
+            Semantiv is not claiming a finished horizontal platform today. Repeated
+            review patterns point toward a workbench, SDK/API primitives, evidence
+            infrastructure, coordination models, and domain packs.
+          </p>
+          <ul class="rule-list">
+            <li><code>Workbench</code><span>Review traces, tool calls, documents, workflows, approvals, and control points.</span></li>
+            <li><code>SDK/API</code><span>Represent action meanings, evidence packets, authority contexts, coordination graphs, and decision records.</span></li>
+            <li><code>Domain packs</code><span>Reusable patterns for code, security, finance, contracts, healthcare, and enterprise operations.</span></li>
+          </ul>
+        </div>
+        <RuntimeDiagram
+          title="runtime path"
+          steps={["behavior", "meaning", "evidence", "authority", "coordination", "control", "record"]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="shell section-grid">
+      <div class="section-label">03 POC</div>
+      <div class="section-body split">
+        <div>
+          <h2 class="headline-lg">A concrete prototype surface: GitHub agent behavior review.</h2>
+          <p class="lede">
+            GitHub is useful because coding agents are visible, powerful, and risky.
+            The point is not GitHub controls. The point is translating agent behavior
+            into operational meaning, evidence, authority, and a control decision.
+          </p>
+          <div class="button-row">
+            <a class="button button--primary" href="/poc/github-action-gateway">See the POC</a>
+          </div>
+        </div>
+        <pre class="code-block">BehaviorTrace
+  -> ActionMeaning
+  -> EvidencePacket
+  -> AuthorityContext
+  -> ControlRecommendation
+  -> DecisionRecord</pre>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    title="Use one production workflow to expose the runtime primitives you actually need."
+    copy="The first useful step is not a broad platform rollout. It is a reviewable slice where agent behavior, evidence, authority, and control can be made explicit."
+    secondaryHref="/review"
+    secondaryLabel="View review outputs"
+  />
+</Layout>

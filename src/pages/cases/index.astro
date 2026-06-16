@@ -1,0 +1,43 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import CTA from "../../components/CTA.astro";
+import CaseRow from "../../components/CaseRow.astro";
+import { cases } from "../../data/site";
+---
+
+<Layout title="Cases">
+  <section class="page-hero">
+    <div class="shell page-hero__body">
+      <div class="page-hero__text">
+        <p class="eyebrow">Cases</p>
+        <h1 class="headline-xl">Where autonomous decisions meet real consequences.</h1>
+        <p class="lede">
+          The same primitives apply across code, security, finance, contracts,
+          healthcare, and enterprise operations: meaning, evidence, authority,
+          coordination, controlled execution, and decision records.
+        </p>
+      </div>
+      <div class="page-hero__meta">
+        <p>Five starting surfaces for design partners and review engagements.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="shell section-grid">
+      <div class="section-label">01 Overview</div>
+      <div class="section-body">
+        <div class="case-list">
+          {cases.map((caseItem) => <CaseRow caseItem={caseItem} />)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    title="Pick the workflow where the agent is useful, risky, and not yet easy to explain."
+    copy="Semantiv can review one narrow slice and leave behind an operational meaning model, evidence requirements, control architecture, and decision record."
+    secondaryHref="/method"
+    secondaryLabel="See the method"
+  />
+</Layout>

@@ -1,0 +1,47 @@
+---
+interface Props {
+  variant?: "dark" | "light";
+  showText?: boolean;
+}
+
+const { variant = "dark", showText = true } = Astro.props;
+---
+
+<a class={`brand brand--${variant}`} href="/" aria-label="Semantiv home">
+  <img src="/assets/semantiv-logo.png" alt="" width="1333" height="1387" />
+  {showText && <span>Semantiv</span>}
+</a>
+
+<style>
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: var(--black);
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .brand:hover {
+    text-decoration: none;
+  }
+
+  .brand img {
+    width: 2rem;
+    height: auto;
+    aspect-ratio: 1333 / 1387;
+    object-fit: contain;
+  }
+
+  .brand--light {
+    color: var(--paper);
+  }
+
+  .brand--light img {
+    filter: invert(1);
+  }
+</style>

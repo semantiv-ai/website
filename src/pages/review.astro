@@ -1,0 +1,118 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CTA from "../components/CTA.astro";
+import RuntimeDiagram from "../components/RuntimeDiagram.astro";
+import { reviewOutputs, reviewQuestions } from "../data/site";
+---
+
+<Layout title="Agent Behavior & Control Review">
+  <section class="page-hero">
+    <div class="shell page-hero__body">
+      <div class="page-hero__text">
+        <p class="eyebrow">Agent Behavior & Control Review</p>
+        <h1 class="headline-xl">A custom technical review for teams deploying autonomous AI.</h1>
+        <p class="lede">
+          A hands-on review of agent behavior, runtime architecture, tool access,
+          workflow coordination, evidence, authority, and control points.
+        </p>
+      </div>
+      <div class="page-hero__meta">
+        <p>Designed for agents that act, not generic AI adoption programs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="shell section-grid">
+      <div class="section-label">01 Questions</div>
+      <div class="section-body">
+        <h2 class="headline-lg">The review answers the questions logs do not.</h2>
+        <ul class="rule-list">
+          {
+            reviewQuestions.map((question, index) => (
+              <li>
+                <code>{String(index + 1).padStart(2, "0")}</code>
+                <span>{question}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="shell section-grid">
+      <div class="section-label">02 Inputs</div>
+      <div class="section-body split">
+        <div>
+          <h2 class="headline-lg">Start from the artifacts your system already emits.</h2>
+          <p class="lede">
+            Prompts, tool definitions, MCP configuration, runtime traces, logs,
+            workflow diagrams, policies, approvals, documents, and failure modes
+            show how the system actually operates.
+          </p>
+        </div>
+        <RuntimeDiagram
+          title="review inputs"
+          steps={["prompts", "tool calls", "traces", "approvals", "documents", "failure cases"]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="shell section-grid">
+      <div class="section-label">03 Outputs</div>
+      <div class="section-body">
+        <h2 class="headline-lg">What Semantiv produces.</h2>
+        <div class="grid-list">
+          {
+            reviewOutputs.map((output, index) => (
+              <article class="grid-item">
+                <span class="grid-item__label">deliverable {String(index + 1).padStart(2, "0")}</span>
+                <h3>{output}</h3>
+                <p>
+                  A concrete artifact your team can inspect, improve, and use as
+                  the basis for production controls.
+                </p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="shell section-grid">
+      <div class="section-label">04 Productization</div>
+      <div class="section-body split">
+        <div>
+          <h2 class="headline-lg">The review is custom because the market is early. The patterns repeat.</h2>
+          <p class="lede">
+            Each review moves from agent behavior to operational meaning, evidence,
+            authority, coordination, control points, and decision records. Those
+            repeated patterns are the basis for Semantiv's emerging runtime infrastructure.
+          </p>
+        </div>
+        <pre class="code-block">agent behavior
+  -> operational meaning
+  -> evidence
+  -> authority
+  -> coordination
+  -> control point
+  -> decision record</pre>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    title="If your agent system is becoming hard to reason about, start with one workflow."
+    copy="Send the workflow, the tools it touches, the actions that create risk, and the traces or records that exist today."
+    primaryHref="/contact"
+    primaryLabel="Request a review"
+    secondaryHref="/who-we-help"
+    secondaryLabel="Check fit signals"
+  />
+</Layout>

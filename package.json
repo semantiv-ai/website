@@ -1,14 +1,24 @@
 {
-  "name": "website",
+  "name": "semantiv-website",
+  "version": "0.1.0",
+  "private": true,
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host 127.0.0.1",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "astro preview --host 127.0.0.1",
+    "check": "astro check"
+  },
+  "engines": {
+    "node": ">=22.12.0"
   },
   "dependencies": {
-    "astro": "^5.17.1"
-  }
+    "@astrojs/check": "^0.9.9",
+    "@astrojs/sitemap": "^3.7.3",
+    "@fontsource/ibm-plex-mono": "^5.2.7",
+    "@fontsource/inter": "^5.2.6",
+    "astro": "^6.4.7",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {}
 }

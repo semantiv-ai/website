@@ -1,0 +1,110 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CTA from "../components/CTA.astro";
+import RuntimeDiagram from "../components/RuntimeDiagram.astro";
+import { methodSteps } from "../data/site";
+---
+
+<Layout title="Method">
+  <section class="page-hero">
+    <div class="shell page-hero__body">
+      <div class="page-hero__text">
+        <p class="eyebrow">Method</p>
+        <h1 class="headline-xl">Discover. Define. Evidence. Compose. Control.</h1>
+        <p class="lede">
+          Semantiv uses a meaning-first engineering discipline for autonomous
+          systems. The language stays simple because the work must hold up in
+          production.
+        </p>
+      </div>
+      <div class="page-hero__meta">
+        <p>Controls come after behavior, meaning, evidence, and coordination are clear.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="shell section-grid">
+      <div class="section-label">01 Loop</div>
+      <div class="section-body split">
+        <div class="content-flow">
+          {
+            methodSteps.map((step, index) => (
+              <article class="method-step">
+                <span class="meta-index">{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <p class="eyebrow">{step.artifact}</p>
+                  <h2 class="headline-md">{step.step}</h2>
+                  <p class="body-copy">{step.description}</p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+        <RuntimeDiagram
+          title="method artifact chain"
+          steps={["prompts and traces", "operational meaning", "required evidence", "workflow composition", "runtime controls", "decision record"]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="shell section-grid">
+      <div class="section-label">02 Discipline</div>
+      <div class="section-body split">
+        <div>
+          <h2 class="headline-lg">Separate what the work means from how the current system happens to represent it.</h2>
+          <p class="lede">
+            An agent may "update a record," but the operational meaning could be
+            changing customer state, accepting business risk, triggering a regulated
+            request, or transferring authority. Semantiv makes those meanings
+            explicit before controls are designed.
+          </p>
+        </div>
+        <pre class="code-block">surface action:
+  update record
+
+operational meaning:
+  change customer state
+
+required support:
+  source document
+  policy match
+  approval status
+
+runtime decision:
+  allow | block | escalate | record</pre>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    title="Use the method on one workflow before autonomous work becomes too complex to reason about."
+    copy="The review turns traces, tool calls, approval paths, and documents into an operational model your team can improve."
+    secondaryHref="/cases"
+    secondaryLabel="See case examples"
+  />
+</Layout>
+
+<style>
+  .method-step {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .method-step:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  @media (max-width: 640px) {
+    .method-step {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+  }
+</style>

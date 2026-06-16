@@ -1,0 +1,130 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import CTA from "../../components/CTA.astro";
+import RuntimeDiagram from "../../components/RuntimeDiagram.astro";
+---
+
+<Layout title="GitHub Agent Behavior Review Prototype">
+  <section class="page-hero">
+    <div class="shell page-hero__body">
+      <div class="page-hero__text">
+        <p class="eyebrow">Possible POC</p>
+        <h1 class="headline-xl">GitHub agent behavior review and control prototype.</h1>
+        <p class="lede">
+          GitHub is a useful prototype surface because coding agents are visible,
+          useful, and risky. The POC tests whether Semantiv can turn messy behavior
+          into meaning, evidence, authority, coordination, control, and record.
+        </p>
+      </div>
+      <div class="page-hero__meta">
+        <p>Not a branch-protection wrapper. A reviewable slice of agent behavior and control.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="shell section-grid">
+      <div class="section-label">01 Demo flow</div>
+      <div class="section-body split">
+        <div>
+          <h2 class="headline-lg">An agent wants to modify code in a production repository.</h2>
+          <p class="lede">
+            The important question is not only whether the path is allowed. It is
+            what the change means, what evidence supports it, who needs to review it,
+            and what action should be allowed, blocked, escalated, or recorded.
+          </p>
+        </div>
+        <RuntimeDiagram
+          title="demo flow"
+          steps={["agent proposes repository work", "trace, diff, tests, and approvals reviewed", "operational meaning assigned", "evidence and authority checked", "control recommendation produced", "decision record stored"]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="shell section-grid">
+      <div class="section-label">02 MVP actions</div>
+      <div class="section-body">
+        <div class="grid-list">
+          <article class="grid-item">
+            <span class="grid-item__label">ReadRepo</span>
+            <h3>Agent reads files or metadata</h3>
+            <p>Which context did the agent rely on?</p>
+          </article>
+          <article class="grid-item">
+            <span class="grid-item__label">ProposeChange</span>
+            <h3>Agent produces a diff or patch</h3>
+            <p>What system behavior is affected?</p>
+          </article>
+          <article class="grid-item">
+            <span class="grid-item__label">OpenPullRequest</span>
+            <h3>Agent creates a branch and PR</h3>
+            <p>What work is being submitted for review?</p>
+          </article>
+          <article class="grid-item">
+            <span class="grid-item__label">RequestReview</span>
+            <h3>Agent asks for human review</h3>
+            <p>What authority is being requested?</p>
+          </article>
+          <article class="grid-item">
+            <span class="grid-item__label">AttemptMerge</span>
+            <h3>Agent tries to merge</h3>
+            <p>Is the system allowed to accept this work now?</p>
+          </article>
+          <article class="grid-item">
+            <span class="grid-item__label">ModifyProtectedPath</span>
+            <h3>Agent changes protected files</h3>
+            <p>What business or security obligation may be affected?</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="shell section-grid">
+      <div class="section-label">03 Core types</div>
+      <div class="section-body split">
+        <div>
+          <h2 class="headline-lg">A small console, not a general platform.</h2>
+          <p class="lede">
+            The prototype should show behavior trace, operational meaning, evidence
+            packet, missing evidence, authority requirement, control recommendation,
+            and decision record.
+          </p>
+        </div>
+        <pre class="code-block">BehaviorTrace
+ActionMeaning
+EvidencePacket
+AuthorityContext
+ControlRecommendation
+DecisionRecord</pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="shell section-grid">
+      <div class="section-label">04 Proves</div>
+      <div class="section-body">
+        <h2 class="headline-lg">What this POC proves.</h2>
+        <ul class="rule-list">
+          <li><code>01</code><span>Semantiv can review real agent behavior, not only static policy.</span></li>
+          <li><code>02</code><span>Operational meaning can be extracted from traces and artifacts.</span></li>
+          <li><code>03</code><span>Evidence gaps can be made explicit.</span></li>
+          <li><code>04</code><span>Coordination and authority can be modeled.</span></li>
+          <li><code>05</code><span>A decision record can explain why work should proceed or stop.</span></li>
+          <li><code>06</code><span>The same method can apply beyond GitHub.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    title="Use GitHub as a concrete slice, not as the company."
+    copy="The POC succeeds when it helps a team understand what an agent changed, what that change means, what evidence exists, and what control should apply."
+    secondaryHref="/cases/coding-agents"
+    secondaryLabel="View coding-agent case"
+  />
+</Layout>
