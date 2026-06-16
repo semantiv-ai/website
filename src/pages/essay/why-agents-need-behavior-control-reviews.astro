@@ -1,0 +1,79 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import CTA from "../../components/CTA.astro";
+---
+
+<Layout title="Why Agents Need Behavior And Control Reviews">
+  <section class="page-hero">
+    <div class="shell page-hero__body">
+      <div class="page-hero__text">
+        <p class="eyebrow">Essay</p>
+        <h1 class="headline-xl">Why agents need behavior and control reviews.</h1>
+        <p class="lede">
+          The first generation of AI products answered questions. The next
+          generation acts. That changes the production problem.
+        </p>
+      </div>
+      <div class="page-hero__meta">
+        <p>Outputs can be harmless. Agent work can change systems, documents, money, code, and decisions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="shell section-grid">
+      <div class="section-label">01 Argument</div>
+      <article class="section-body prose">
+        <h2>Outputs are not work.</h2>
+        <p>
+          A model output can be wrong and still harmless. Agent work can change
+          customer data, merge code, send money, trigger workflows, modify contracts,
+          or create legal exposure.
+        </p>
+        <p>
+          Once agents act, teams need more than logs and evals. They need to
+          understand what agents actually do.
+        </p>
+
+        <h2>The runtime question.</h2>
+        <p>
+          The key production question is: what is this agent doing, what does it
+          mean, and what evidence supports it?
+        </p>
+        <p>
+          Only after that can a team decide what controls belong at runtime.
+        </p>
+
+        <h2>The missing discipline.</h2>
+        <p>
+          Most teams spread agent control across prompts, tool wrappers, human
+          review, dashboards, IAM, and policy documents. That creates partial
+          visibility but weak meaning.
+        </p>
+        <p>
+          Semantiv starts by reviewing behavior and assigning operational meaning
+          before recommending controls.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="shell section-grid">
+      <div class="section-label">02 View</div>
+      <div class="section-body">
+        <h2 class="headline-lg">Agent work should be discovered, defined, evidenced, composed, controlled, and recorded.</h2>
+        <p class="lede">
+          That is the foundation for trustworthy autonomous systems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    title="Start with a behavior review before the system scales."
+    copy="The review makes one workflow understandable enough to control and improve."
+    secondaryHref="/review"
+    secondaryLabel="View the review"
+  />
+</Layout>

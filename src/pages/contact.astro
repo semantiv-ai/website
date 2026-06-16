@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CTA from "../components/CTA.astro";
+---
+
+<Layout title="Contact">
+  <section class="page-hero">
+    <div class="shell page-hero__body">
+      <div class="page-hero__text">
+        <p class="eyebrow">Contact</p>
+        <h1 class="headline-xl">Request an Agent Behavior & Control Review.</h1>
+        <p class="lede">
+          If your agents are moving from demo to production, Semantiv can help
+          you understand their behavior, model what their work means, and design
+          controls before deployment scales.
+        </p>
+        <div class="button-row">
+          <a class="button button--primary" href="mailto:hello@semantiv.ai?subject=Agent%20Behavior%20%26%20Control%20Review">Email hello@semantiv.ai</a>
+          <a class="button button--secondary" href="/review">Review the offer</a>
+        </div>
+      </div>
+      <div class="page-hero__meta">
+        <p>Best first conversation: one workflow where the agent is useful, risky, and hard to explain.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="shell section-grid">
+      <div class="section-label">01 Send</div>
+      <div class="section-body split">
+        <div>
+          <h2 class="headline-lg">Send a short note with the workflow and the risk.</h2>
+          <p class="lede">
+            A clear starting point is better than a complete system inventory.
+            Semantiv can begin with the traces and artifacts you already have.
+          </p>
+        </div>
+        <ul class="rule-list">
+          <li><code>01</code><span>What your agents do.</span></li>
+          <li><code>02</code><span>What tools, systems, data, or documents they touch.</span></li>
+          <li><code>03</code><span>Which actions or decisions create the most risk.</span></li>
+          <li><code>04</code><span>What traces, logs, workflows, or artifacts exist today.</span></li>
+          <li><code>05</code><span>Where approvals or controls currently happen.</span></li>
+          <li><code>06</code><span>Whether contracts, policies, or regulated documents are involved.</span></li>
+          <li><code>07</code><span>Whether you want review, architecture, prototype, or implementation support.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="shell section-grid">
+      <div class="section-label">02 Design partners</div>
+      <div class="section-body">
+        <h2 class="headline-lg">Semantiv is especially interested in agents that already interact with high-trust operations.</h2>
+        <p class="lede">
+          Production tools, code, customer workflows, regulated data, contracts,
+          financial records, healthcare operations, and approval-heavy documents
+          are strong starting points.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    title="Send your agent workflow."
+    copy="Use hello@semantiv.ai and include one concrete workflow, the tools it touches, and the decision you need to trust."
+    primaryHref="mailto:hello@semantiv.ai?subject=Agent%20workflow%20for%20Semantiv"
+    primaryLabel="Send your agent workflow"
+    secondaryHref="/method"
+    secondaryLabel="See the method"
+  />
+</Layout>

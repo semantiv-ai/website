@@ -1,159 +1,217 @@
 ---
-// Semantiv AI — Coming Soon
+import Layout from "../layouts/Layout.astro";
+import CTA from "../components/CTA.astro";
+import CaseRow from "../components/CaseRow.astro";
+import HeroArtifact from "../components/HeroArtifact.astro";
+import PrimitiveGrid from "../components/PrimitiveGrid.astro";
+import RuntimeDiagram from "../components/RuntimeDiagram.astro";
+import { cases, methodSteps, reviewOutputs } from "../data/site";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Semantiv AI — Precise semantic infrastructure for adaptive AI systems." />
-    <title>Semantiv AI</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="content">
-        <div class="logo-mark">S</div>
-        <h1>Semantiv</h1>
-        <p class="tagline">Precise semantic infrastructure for adaptive AI systems.</p>
-        <div class="divider"></div>
-        <p class="description">
-          We build the structural layer that makes AI systems composable, predictable, and precise.
-          Where mathematical rigor meets practical intelligence.
+<Layout title="Get autonomous systems into accountable operations">
+  <section class="home-hero section--black">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Agent behavior and control for autonomous AI systems</p>
+        <h1 class="headline-xl">Get autonomous systems into accountable operations.</h1>
+        <p class="lede">
+          Semantiv helps teams define what agentic work means, bind important actions
+          to evidence, coordinate work across systems, and control execution before
+          autonomous systems scale.
         </p>
-        <div class="coming-soon">Coming Soon</div>
-        <a href="mailto:hello@semantiv.ai" class="email">hello@semantiv.ai</a>
+        <div class="button-row">
+          <a class="button button--primary" href="/review">Request an Agent Behavior & Control Review</a>
+          <a class="button button--secondary" href="/method">See the method</a>
+        </div>
       </div>
-      <footer>
-        <p>&copy; 2026 Semantiv AI, Inc.</p>
-      </footer>
+      <HeroArtifact />
     </div>
-  </body>
-</html>
+  </section>
+
+  <section class="section section--paper">
+    <div class="shell section-grid">
+      <div class="section-label">01 Problem</div>
+      <div class="section-body split">
+        <div>
+          <h2 class="headline-lg">Understand what your AI agents actually do before they scale.</h2>
+          <p class="lede">
+            Agents are moving from demos into production work. They call tools,
+            touch data, modify code, draft contracts, trigger decisions, and coordinate
+            across systems.
+          </p>
+        </div>
+        <div class="artifact-panel">
+          <div class="artifact-header">
+            <span>Observed gap</span>
+            <span class="status status--blocked">Missing context</span>
+          </div>
+          <div class="artifact-body">
+            <p class="artifact-quote">
+              Logs show what happened. They rarely explain what the work meant,
+              what evidence supported it, who had authority, or why the action
+              should have been allowed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="shell section-grid">
+      <div class="section-label">02 Review</div>
+      <div class="section-body">
+        <div class="split">
+          <div>
+            <p class="eyebrow">First commercial offer</p>
+            <h2 class="headline-lg">Agent Behavior & Control Reviews for teams deploying agents that act.</h2>
+            <p class="lede">
+              Semantiv maps behavior, tool access, workflow coordination, evidence,
+              authority, and risk. Then we design the runtime controls and implementation
+              path needed to make the system clearer and safer to scale.
+            </p>
+            <div class="button-row">
+              <a class="button button--primary" href="/review">View the review</a>
+            </div>
+          </div>
+          <ul class="rule-list review-list">
+            {
+              reviewOutputs.map((output, index) => (
+                <li>
+                  <code>{String(index + 1).padStart(2, "0")}</code>
+                  <span>{output}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="shell section-grid">
+      <div class="section-label">03 Platform</div>
+      <div class="section-body">
+        <h2 class="headline-lg">Runtime primitives for accountable autonomous work.</h2>
+        <p class="lede">
+          The current motion is hands-on review and implementation support. The
+          repeated primitives become the product: action contracts, evidence packets,
+          authority context, coordination graphs, commitment models, and decision records.
+        </p>
+        <PrimitiveGrid />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="shell section-grid">
+      <div class="section-label">04 Method</div>
+      <div class="section-body split">
+        <div>
+          <h2 class="headline-lg">Discover. Define. Evidence. Compose. Control.</h2>
+          <p class="lede">
+            Controls come after meaning. Semantiv starts from real behavior,
+            defines the operational meaning of important actions, attaches evidence,
+            models coordination, and then designs runtime boundaries.
+          </p>
+          <ul class="rule-list">
+            {
+              methodSteps.map((step, index) => (
+                <li>
+                  <code>{String(index + 1).padStart(2, "0")}</code>
+                  <span>
+                    <strong>{step.step}</strong>
+                    <br />
+                    {step.description}
+                  </span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <RuntimeDiagram
+          title="method loop"
+          steps={["behavior trace", "action contract", "evidence packet", "coordination map", "control point", "decision record"]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="shell section-grid">
+      <div class="section-label">05 Cases</div>
+      <div class="section-body">
+        <h2 class="headline-lg">Where autonomous work meets operational consequence.</h2>
+        <p class="lede">
+          Semantiv starts where agent actions carry meaning, evidence requirements,
+          authority, coordination, and durable commitments.
+        </p>
+        <div class="case-list">
+          {cases.map((caseItem) => <CaseRow caseItem={caseItem} />)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    eyebrow="06 Start"
+    title="If your agents are moving from demo to production, start by understanding what they actually do."
+    copy="Bring one workflow, the traces you have, and the actions that create risk. Semantiv will help turn ambiguous behavior into operational meaning, evidence, controls, and a decision record."
+    secondaryHref="/cases"
+    secondaryLabel="Review case examples"
+  />
+</Layout>
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  .home-hero {
+    padding: 3rem 0 2rem;
+    border-top: 0;
   }
 
-  html, body {
-    height: 100%;
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(22rem, 0.95fr);
+    gap: 3rem;
+    align-items: end;
   }
 
-  body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #0a0a0b;
-    color: #e4e4e7;
-    -webkit-font-smoothing: antialiased;
+  .hero-copy {
+    max-width: 52rem;
   }
 
-  .container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+  .artifact-quote {
+    color: var(--text-dark);
+    font-size: 1.35rem;
+    line-height: 1.45;
   }
 
-  .content {
-    text-align: center;
-    max-width: 560px;
+  .review-list {
+    margin-top: 0;
   }
 
-  .logo-mark {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 2.5rem;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    font-weight: 600;
-    color: white;
-    letter-spacing: -0.02em;
+  .case-list {
+    margin-top: 2.5rem;
   }
 
-  h1 {
-    font-size: 3.5rem;
-    font-weight: 600;
-    letter-spacing: -0.04em;
-    color: #fafafa;
-    margin-bottom: 1rem;
-  }
-
-  .tagline {
-    font-size: 1.125rem;
-    font-weight: 400;
-    color: #a1a1aa;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-  }
-
-  .divider {
-    width: 48px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #6366f1, transparent);
-    margin: 0 auto 2rem;
-  }
-
-  .description {
-    font-size: 1rem;
-    font-weight: 300;
-    color: #71717a;
-    line-height: 1.7;
-    margin-bottom: 2.5rem;
-  }
-
-  .coming-soon {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #6366f1;
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    padding: 0.5rem 1.5rem;
-    border-radius: 100px;
-    margin-bottom: 2rem;
-  }
-
-  .email {
-    display: block;
-    font-size: 1rem;
-    color: #a1a1aa;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .email:hover {
-    color: #6366f1;
-  }
-
-  footer {
-    position: absolute;
-    bottom: 2rem;
-    text-align: center;
-  }
-
-  footer p {
-    font-size: 0.8rem;
-    color: #3f3f46;
+  @media (max-width: 980px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
   }
 
   @media (max-width: 640px) {
-    h1 {
-      font-size: 2.5rem;
+    .home-hero {
+      padding: 2rem 0 1.25rem;
     }
-    .tagline {
-      font-size: 1rem;
+
+    .hero-grid {
+      gap: 1.15rem;
+    }
+
+    .artifact-quote {
+      font-size: 1.1rem;
     }
   }
 </style>

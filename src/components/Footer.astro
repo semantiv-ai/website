@@ -1,0 +1,77 @@
+---
+import Logo from "./Logo.astro";
+import { navItems } from "../data/site";
+---
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div>
+      <Logo variant="light" />
+      <p class="footer-copy">
+        Agent behavior and control for autonomous AI systems.
+      </p>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+      <a href="/who-we-help">Who We Help</a>
+      <a href="/poc/github-action-gateway">POC</a>
+      <a href="/essay/why-agents-need-behavior-control-reviews">Essay</a>
+    </nav>
+    <div class="footer-meta">
+      <span>Static Astro site</span>
+      <span>Cloudflare Pages ready</span>
+      <span>semantiv.ai</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    color: var(--paper);
+    background: var(--black);
+    border-top: 1px solid var(--border-dark);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 0.75fr);
+    gap: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .footer-copy {
+    max-width: 22rem;
+    margin-top: 1rem;
+    color: var(--muted-light);
+  }
+
+  .footer-links,
+  .footer-meta {
+    display: grid;
+    gap: 0.55rem;
+    align-content: start;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+  }
+
+  .footer-links a {
+    color: var(--muted-light);
+    text-decoration: none;
+  }
+
+  .footer-links a:hover {
+    color: var(--paper);
+    text-decoration: underline;
+  }
+
+  .footer-meta {
+    color: var(--muted-light);
+  }
+
+  @media (max-width: 760px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

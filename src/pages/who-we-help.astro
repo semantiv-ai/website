@@ -1,0 +1,98 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CTA from "../components/CTA.astro";
+import { fitSignals } from "../data/site";
+---
+
+<Layout title="Who We Help">
+  <section class="page-hero">
+    <div class="shell page-hero__body">
+      <div class="page-hero__text">
+        <p class="eyebrow">Who we help</p>
+        <h1 class="headline-xl">For teams deploying autonomous AI into real workflows.</h1>
+        <p class="lede">
+          Semantiv is for technical teams whose agents do more than answer
+          questions. We help when behavior becomes operationally meaningful.
+        </p>
+      </div>
+      <div class="page-hero__meta">
+        <p>Best fit: agents touching tools, data, code, documents, approvals, customers, or regulated processes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="shell section-grid">
+      <div class="section-label">01 Design partners</div>
+      <div class="section-body">
+        <div class="grid-list">
+          <article class="grid-item">
+            <span class="grid-item__label">AI product startups</span>
+            <h3>Moving from demo to production</h3>
+            <p>Customers ask how agents behave, what they can access, what evidence they use, and how actions are controlled.</p>
+          </article>
+          <article class="grid-item">
+            <span class="grid-item__label">Security and governance</span>
+            <h3>Responsible for agent risk</h3>
+            <p>Teams need to understand agent usage, tool access, behavior, risk, and controls across an organization.</p>
+          </article>
+          <article class="grid-item">
+            <span class="grid-item__label">Runtime and devtool teams</span>
+            <h3>Building agent infrastructure</h3>
+            <p>Coding agents, workflow agents, orchestration systems, MCP tools, and tool-calling infrastructure need a control story.</p>
+          </article>
+          <article class="grid-item">
+            <span class="grid-item__label">Vertical AI teams</span>
+            <h3>Operating in high-trust domains</h3>
+            <p>Legal, finance, healthcare, security, compliance, procurement, support, and enterprise operations need evidence discipline.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="shell section-grid">
+      <div class="section-label">02 Fit signals</div>
+      <div class="section-body split">
+        <div>
+          <h2 class="headline-lg">Strong fit signals.</h2>
+          <p class="lede">
+            The best first conversation focuses on one workflow where agent behavior
+            is useful, risky, and not yet easy to explain.
+          </p>
+        </div>
+        <ul class="rule-list">
+          {
+            fitSignals.map((signal, index) => (
+              <li>
+                <code>{String(index + 1).padStart(2, "0")}</code>
+                <span>{signal}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="shell section-grid">
+      <div class="section-label">03 Not a fit</div>
+      <div class="section-body">
+        <h2 class="headline-lg">Not every AI system needs Semantiv.</h2>
+        <p class="lede">
+          Semantiv is probably not the right fit if the product is only a chatbot,
+          the agent never acts, or the team wants generic AI adoption work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    title="If your agents already act, map the operational meaning before autonomy expands."
+    copy="Bring the workflow, the tools it touches, and the actions that make your customers or reviewers uneasy."
+    secondaryHref="/review"
+    secondaryLabel="View the review"
+  />
+</Layout>

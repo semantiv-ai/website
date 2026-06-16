@@ -1,0 +1,53 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  copy: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+  dark?: boolean;
+}
+
+const {
+  eyebrow = "Next step",
+  title,
+  copy,
+  primaryHref = "/contact",
+  primaryLabel = "Request an Agent Behavior & Control Review",
+  secondaryHref,
+  secondaryLabel,
+  dark = true
+} = Astro.props;
+---
+
+<section class={`section ${dark ? "section--black" : "section--paper"}`}>
+  <div class="shell section-grid">
+    <div class="section-label">{eyebrow}</div>
+    <div class="section-body split">
+      <div>
+        <h2 class="headline-lg">{title}</h2>
+        <p class="lede">{copy}</p>
+      </div>
+      <div class="cta-actions">
+        <a class="button button--primary" href={primaryHref}>{primaryLabel}</a>
+        {
+          secondaryHref && secondaryLabel && (
+            <a class="button button--secondary" href={secondaryHref}>
+              {secondaryLabel}
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-actions {
+    display: grid;
+    gap: 0.75rem;
+    align-content: start;
+  }
+</style>

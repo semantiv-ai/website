@@ -1,0 +1,101 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CTA from "../components/CTA.astro";
+import RuntimeDiagram from "../components/RuntimeDiagram.astro";
+---
+
+<Layout title="Company Thesis">
+  <section class="page-hero">
+    <div class="shell page-hero__body">
+      <div class="page-hero__text">
+        <p class="eyebrow">Company thesis</p>
+        <h1 class="headline-xl">Agents create operational uncertainty.</h1>
+        <p class="lede">
+          AI agents are becoming part of how companies analyze, decide,
+          coordinate, and execute work. Production systems need more than logs,
+          evals, dashboards, IAM, and policy documents.
+        </p>
+      </div>
+      <div class="page-hero__meta">
+        <p>Semantiv starts with behavior reviews and builds toward runtime infrastructure.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--paper">
+    <div class="shell section-grid">
+      <div class="section-label">01 Need</div>
+      <div class="section-body split">
+        <div>
+          <h2 class="headline-lg">What is the agent actually doing, what does it mean, and how do we know it is safe enough to scale?</h2>
+          <p class="lede">
+            Existing controls answer parts of the question. They do not fully
+            explain the meaning of agentic work across tools, humans, documents,
+            and systems.
+          </p>
+        </div>
+        <RuntimeDiagram
+          title="production need"
+          steps={["discover behavior", "map access", "define meaning", "attach evidence", "model coordination", "design controls", "record decisions"]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="shell section-grid">
+      <div class="section-label">02 Why</div>
+      <div class="section-body split">
+        <div>
+          <h2 class="headline-lg">Agent behavior needs explicit meaning before it can be trusted.</h2>
+          <p class="lede">
+            That conviction becomes practical work: behavior reviews, meaning
+            models, evidence models, coordination maps, commitment models, control
+            architecture, and runtime prototypes.
+          </p>
+        </div>
+        <pre class="code-block">behavior reviews
+meaning models
+evidence models
+coordination maps
+commitment models
+control architecture
+runtime prototypes</pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="shell section-grid">
+      <div class="section-label">03 Market entry</div>
+      <div class="section-body">
+        <h2 class="headline-lg">Custom technical reviews first. Product primitives behind the scenes.</h2>
+        <p class="lede">
+          The market is early and agent environments vary widely. Each review
+          creates immediate client value, design-partner learning, reusable runtime
+          primitives, implementation opportunities, and product direction grounded
+          in real workflows.
+        </p>
+        <div class="grid-list">
+          <article class="grid-item">
+            <span class="grid-item__label">today</span>
+            <h3>Technical review and implementation support</h3>
+            <p>Map one workflow, identify control points, and build the first usable path.</p>
+          </article>
+          <article class="grid-item">
+            <span class="grid-item__label">emerging</span>
+            <h3>Runtime infrastructure</h3>
+            <p>Evidence, decision records, coordination primitives, and domain packs for accountable autonomous work.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA
+    title="The category is agent behavior and control."
+    copy="Semantiv helps teams make autonomous work understandable, evidenced, coordinated, and controlled before deployment scales."
+    secondaryHref="/platform"
+    secondaryLabel="View platform direction"
+  />
+</Layout>

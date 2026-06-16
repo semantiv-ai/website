@@ -1,0 +1,108 @@
+---
+import type { CaseStudy } from "../data/site";
+
+interface Props {
+  caseItem: CaseStudy;
+}
+
+const { caseItem } = Astro.props;
+---
+
+<a class="case-row" href={`/cases/${caseItem.slug}`}>
+  <span class="case-row__index">{caseItem.eyebrow}</span>
+  <span class="case-row__main">
+    <strong>{caseItem.title}</strong>
+    <span>{caseItem.scenario}</span>
+  </span>
+  <span class="case-row__meta">
+    <span>Risk</span>
+    <strong>{caseItem.risk}</strong>
+  </span>
+  <span class="case-row__arrow" aria-hidden="true">View</span>
+</a>
+
+<style>
+  .case-row {
+    display: grid;
+    grid-template-columns: 5rem minmax(0, 1.2fr) minmax(16rem, 0.8fr) auto;
+    gap: 1.25rem;
+    align-items: start;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border-light);
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .case-row:last-child {
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .section--dark .case-row,
+  .section--black .case-row {
+    border-color: var(--border-dark);
+  }
+
+  .case-row:hover {
+    text-decoration: none;
+  }
+
+  .case-row:hover .case-row__main strong {
+    transform: translateX(0.25rem);
+  }
+
+  .case-row__index,
+  .case-row__meta span,
+  .case-row__arrow {
+    color: var(--muted-dark);
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+  }
+
+  .section--dark .case-row__index,
+  .section--dark .case-row__meta span,
+  .section--dark .case-row__arrow,
+  .section--black .case-row__index,
+  .section--black .case-row__meta span,
+  .section--black .case-row__arrow {
+    color: var(--muted-light);
+  }
+
+  .case-row__main,
+  .case-row__meta {
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .case-row__main strong {
+    display: inline-block;
+    width: fit-content;
+    font-size: 1.05rem;
+    transition: transform 180ms ease-in-out;
+  }
+
+  .case-row__main span,
+  .case-row__meta strong {
+    color: var(--muted-dark);
+    font-size: 0.95rem;
+    font-weight: 400;
+  }
+
+  .section--dark .case-row__main span,
+  .section--dark .case-row__meta strong,
+  .section--black .case-row__main span,
+  .section--black .case-row__meta strong {
+    color: var(--muted-light);
+  }
+
+  @media (max-width: 860px) {
+    .case-row {
+      grid-template-columns: 1fr;
+      gap: 0.65rem;
+    }
+
+    .case-row__arrow {
+      justify-self: start;
+    }
+  }
+</style>
